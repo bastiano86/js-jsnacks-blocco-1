@@ -15,28 +15,53 @@ listaCognomi = ["Anderson", "Ashwoon", "Aikin", "Bateman", "Bongard", "Bowers", 
 listaInvitati = [];
 
 //RISCRIVIAMO TUTTI I NOMI AL FEMMINILE
-let contatore = 0
+let contatoreA = 0
 
 //FINCHé DURERà LA LISTA DEI NOMI
-while (contatore < listaNomi.length) {
+while (contatoreA < listaNomi.length) {
     //SE DI UN ELEMENTO "CONTATO" DENTRO listaNomi LA LETTERA FINALE SARà UGUALE AD 'a'   
-    if (listaNomi[contatore].charAt(listaNomi[contatore].length - 1) == 'a' ||
+    if (listaNomi[contatoreA].charAt(listaNomi[contatoreA].length - 1) == 'a' ||
     // OPPURE 'e'
-        listaNomi[contatore].charAt(listaNomi[contatore].length - 1) == 'e' || 
+        listaNomi[contatoreA].charAt(listaNomi[contatoreA].length - 1) == 'e' || 
     // OPPURE 'i'
-        listaNomi[contatore].charAt(listaNomi[contatore].length - 1) == 'i' ||
+        listaNomi[contatoreA].charAt(listaNomi[contatoreA].length - 1) == 'i' ||
     // OPPURE 'o'
-        listaNomi[contatore].charAt(listaNomi[contatore].length - 1) == 'o' ||
+        listaNomi[contatoreA].charAt(listaNomi[contatoreA].length - 1) == 'o' ||
     // OPPURE 'u'
-        listaNomi[contatore].charAt(listaNomi[contatore].length - 1) == 'u' ||
+        listaNomi[contatoreA].charAt(listaNomi[contatoreA].length - 1) == 'u' ||
     // OPPURE 'y'
-        listaNomi[contatore].charAt(listaNomi[contatore].length - 1) == 'y' ||) {
+        listaNomi[contatoreA].charAt(listaNomi[contatoreA].length - 1) == 'y' ||) {
     // LA LETTERA FINALE DELL'ELEMENTO "CONTATO" DENTRO listaNomi VERRà TAGLIATA E SOSTITUITA CON "ina"
-        listaNomi[contatore] = listaNomi[contatore].slice(0,-1) + 'ina'; 
+        listaNomi[contatoreA] = listaNomi[contatoreA].slice(0,-1) + 'ina'; 
         } /*ALTRIMENTI*/ else {
     // L'ELEMENTO "CONTATO" DI listaNomi SARà IL RISULTATO DI Sè STESSO + 'ina'
-        listaNomi[contatore] += 'ina'
-    } 
+        listaNomi[contatoreA] += 'ina'
+    }
+contatoreA++;
+}
+// ADESSO CARICHIAMO LA LISTA CASUALE
+// FACCIAMO PARTIRE UN CONTATORE PER 8 CICLI
+
+for (let contatoreB = 0; contatoreB < 8; contatoreB++) {
+
+    let indiceNomeRandomico = Math.floor(Math.random()*listaNomi.length); // arrotondiamo al numero intero più piccolo con Math.floor
+                                                                          // e calcoliamo con Math.random() * numeroMassimo un numero randomico
+                                                                          // compreso tra zero e numeroMassimo (escluso)
+    let indiceCognomeRandomico = Math.floor(Math.random()*listaCognomi.length); //FACCIAMO LO STESSO ANCHE PER IL COGNOME
+
+    //UNIAMOLI IN UNA SOLA VARIABILE CON UNO SPAZIO IN MEZZO
+    let nomeInteroRandomico = listaNomi[indiceNomeRandomico] + '' + listaCognomi;
+
+    //SCRIVIAMOLO SUL NOSTRO HTML
+    document.getElementById('lista-invitati').innerHTML += '<li>' + nomeInteroRandomico + '</li>';
+
+}
+
+//SCRIVIAMO NEL NOSTRO HTML PURE LA LISTA DEI NOMI CARICATA IN PRECEDENZA
+document.getElementById("lista-nomi").innerHTML = listaNomi.toString();
+
+//E I COGNOMI
+document.getElementById("lista-cognomi").innerHTML = listaCognomi.toString();
     
 
 
