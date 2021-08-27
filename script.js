@@ -30,7 +30,7 @@ while (contatoreA < listaNomi.length) {
     // OPPURE 'u'
         listaNomi[contatoreA].charAt(listaNomi[contatoreA].length - 1) == 'u' ||
     // OPPURE 'y'
-        listaNomi[contatoreA].charAt(listaNomi[contatoreA].length - 1) == 'y' ||) {
+        listaNomi[contatoreA].charAt(listaNomi[contatoreA].length - 1) == 'y') {
     // LA LETTERA FINALE DELL'ELEMENTO "CONTATO" DENTRO listaNomi VERRà TAGLIATA E SOSTITUITA CON "ina"
         listaNomi[contatoreA] = listaNomi[contatoreA].slice(0,-1) + 'ina'; 
         } /*ALTRIMENTI*/ else {
@@ -50,9 +50,9 @@ for (let contatoreB = 0; contatoreB < 8; contatoreB++) {
     let indiceCognomeRandomico = Math.floor(Math.random()*listaCognomi.length); //FACCIAMO LO STESSO ANCHE PER IL COGNOME
 
     //UNIAMOLI IN UNA SOLA VARIABILE CON UNO SPAZIO IN MEZZO
-    let nomeInteroRandomico = listaNomi[indiceNomeRandomico] + '' + listaCognomi;
+    let nomeInteroRandomico = listaNomi[indiceNomeRandomico] + '' + listaCognomi[indiceCognomeRandomico];
 
-    //SCRIVIAMOLO SUL NOSTRO HTML
+    //SCRIVIAMOLO SUL NOSTRO HTML REITERANDOLO '+=' TUTTE LE VOLTE CHE LO ABBIAMO INDICATO DENTRO AL NOSTRO CICLO 
     document.getElementById('lista-invitati').innerHTML += '<li>' + nomeInteroRandomico + '</li>';
 
 }
