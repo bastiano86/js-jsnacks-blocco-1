@@ -1,3 +1,5 @@
+//------ PRIMO SNACK -------//
+
 
 /**
  * A -
@@ -44,6 +46,8 @@ contatoreA++;
 
 for (let contatoreB = 0; contatoreB < 8; contatoreB++) {
 
+    //TROVIAMO I NOMI E I COGNOMI CASUALI ALL'INTERNO DELLE LISTE CONOSCIUTE
+
     let indiceNomeRandomico = Math.floor(Math.random()*listaNomi.length); // arrotondiamo al numero intero più piccolo con Math.floor
                                                                           // e calcoliamo con Math.random() * numeroMassimo un numero randomico
                                                                           // compreso tra zero e numeroMassimo (escluso)
@@ -62,7 +66,56 @@ document.getElementById("lista-nomi").innerHTML = listaNomi.toString();
 
 //E I COGNOMI
 document.getElementById("lista-cognomi").innerHTML = listaCognomi.toString();
+
+
+//------SECONDO SNACK -------//
+
+/**
+ *  Il software deve chiedere per 5 volte all’utente di inserire un numero.
+ *  Il programma stampa la somma di tutti i numeri inseriti.
+ *  Esegui questo programma in due versioni, con il for e con il while.
+ */
+
+//--INIZIALIZZIAMO LA VARIABILE sommaFor CON 0 (OVVIAMENTE) NELLA VERSIONE CON CICLO DI FOR
     
+let sommaFor = 0;
+
+//FACCIAMO PARTIRE UN CICLO DI 5 RIPETIZIONI CHE:
+
+for (let cicloF=0; cicloF<5; cicloF++) {
+
+    //RIPETE L'ADDIZIONE DI sommaFor A Sè STESSA DA sommaFor AGGIUNTA AD UN VALORE DI PROMPT CON VALORE INTERO
+    sommaFor += parseInt ( prompt ("Inserisci un numero") );
+}
+
+//STAMPIAMO IL RISULTATO DI FOR SULLA NOSTRA CONSOLE
+
+console.log ("il risultato di for è " + sommaFor);
+
+//--INIZIALIZZIAMO LA VARIABILE sommaWhile NELLA VERSIONE CON CICLO DI WHILE
+
+let sommaWhile = 0;
+
+//INIZIALIZZIAMO LA VARIABILE DEL CICLO WHILE
+let cicloW = 0;
+
+//FACCIAMO PARTIRE IL CICLO WHILE
+while (cicloW<5) {
+
+    //SOMMIAMO LA VARIABILE sommaWhile A SE STESSA INTERA
+    sommaWhile += parseInt ( prompt ("Inserisci un numero") );
+
+    //E RIPETIAMO LA STESSA COSA PER 5 VOLTE (COME INDICATO ALL'INIZIO DEL CICLO DI WHILE)
+    cicloW++;
+}
+
+//STAMPIAMO IL RISULTATO DI WHILE SULLA NOSTRA CONSOLE
+
+console.log ("il risultato di while è " + sommaWhile);
+
+
+
+
 
 
 
